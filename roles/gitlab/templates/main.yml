@@ -1,0 +1,7 @@
+external_url "http://{{ root }}"
+gitlab_rails['db_adapter'] = 'postgresql'
+gitlab_rails['db_encoding'] = 'unicode'
+gitlab_rails['db_database'] = 'all'
+gitlab_rails['db_username'] = 'admin'
+gitlab_rails['db_password'] = 'admin'
+gitlab_rails['db_host'] = 'postgres'

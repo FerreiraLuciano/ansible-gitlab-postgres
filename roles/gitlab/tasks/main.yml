@@ -1,0 +1,28 @@
+- name: Add GitLab GPG key
+  apt_key:
+    url: https://packages.gitlab.com/gpg.key
+    state: present
+
+- name: Add GitLab package repository
+  apt_repository:
+    repo: "deb https://packages.gitlab.com/gitlab/gitlab-ce/ubuntu/ focal main"
+    state: present
+
+- name: Update APT package cache
+  apt:
+    update_cache: yes
+
+- name: Install GitLab
+  apt:
+    name: gitlab-ce
+    state: present
+
+- name: Configure /etc/gitlab/gitlab.rb for external URL
+  lineinfile:
+    path: /etc/gitlab/gitlab.rb
+    regexp: '^external_url'
+    line: "external_url '{{ gitlab_external_url }}'"
+    state: present
+
+- name: Reconfigure GitLab
+  command: gitlab-ctl reconfigure
