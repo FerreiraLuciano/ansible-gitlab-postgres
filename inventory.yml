@@ -3,9 +3,3 @@ gitlab:
     192.168.66.10
   vars:
     ansible_ssh_user: root
-
-postgres:
-  hosts:
-    192.168.66.10
-  vars:
-    ansible_ssh_user: root

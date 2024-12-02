@@ -1,6 +1,6 @@
-- hosts:
-    become: yes
-    roles:
-      - common
-      - bdd
-      - gitlab
+- hosts: gitlab
+  become: yes
+  roles:
+    - common
+    - bdd
+    - gitlab
