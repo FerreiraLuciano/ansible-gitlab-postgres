@@ -12,7 +12,7 @@
 
 - name: Copy docker-compose.yml
   copy:
-    src: "{{ playbook_dir }}/docker/docker-compose.yml"
+    src: "/docker/docker-compose.yml"
     dest: /opt/docker/docker-compose.yml
 
 - name: Deploy services with Docker Compose
